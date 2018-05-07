@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dotme
+Comment=Dotme P2P Cryptocurrency
+Comment[fr]=Dotme, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Dotme, eşten eşe kriptografik sanal para birimi
+Exec=dotme-qt %u
+Terminal=false
+Type=Application
+Icon=dotme128
+MimeType=x-scheme-handler/dotme;
+Categories=Office;Finance;

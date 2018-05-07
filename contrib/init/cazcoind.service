@@ -1,0 +1,26 @@
+[Unit]
+Description=Dotme's distributed currency daemon
+After=network.target
+
+[Service]
+User=dotme
+Group=dotme
+
+Type=forking
+PIDFile=/var/lib/dotmed/dotmed.pid
+
+ExecStart=/usr/bin/dotmed -daemon -pid=/var/lib/dotmed/dotmed.pid \
+          -conf=/etc/dotme/dotme.conf -datadir=/var/lib/dotmed
+
+ExecStop=-/usr/bin/dotme-cli -conf=/etc/dotme/dotme.conf \
+         -datadir=/var/lib/dotmed stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
