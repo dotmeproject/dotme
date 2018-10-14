@@ -91,10 +91,10 @@ public:
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 120;    
-        nTargetSpacing = 1 * 120;  
-        nLastPOWBlock = 2592000;
-        nMaturity = 50;
+        nTargetTimespan = 180;    
+        nTargetSpacing = 180;  
+        nLastPOWBlock = 500;
+        nMaturity = 150;
         nModifierUpdateBlock = 1;
 		
         const char* pszTimestamp = "https://www.cnbc.com/2018/05/04/bitcoin-is-rallying--and-can-no-longer-be-dismissed-brian-kelly.html";
@@ -144,7 +144,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "0425ddf25e96014ef102d69ed7f7d354becfdee616e6f5efda8518277aa7e45d6f2087e4c51bcd04ec46712aeb3049850469f122846ace0c5e8185dabe024bf2fc";
         strObfuscationPoolDummyAddress = "dYiNW89nDmRdrFjhMA6SGLX3gjffrBLFdY";
-        nStartMasternodePayments = 1525726800; //16 April 2018 16:30:00 GMT +00
+        nStartMasternodePayments = 1539604800; //15 October 2018 12:00:00 GMT +00
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {

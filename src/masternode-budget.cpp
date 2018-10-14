@@ -793,17 +793,19 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
         CAmount nSubsidy = 500 * COIN;
         return ((nSubsidy / 100) * 10) * 146;
     }
-
+	
     //get block value and calculate from that
     CAmount nSubsidy = 0;
-    if (nHeight >= 100 && nHeight < 345600) {
-        nSubsidy = 1 * COIN;
-    } else if (nHeight >= 345600 && nHeight < 1036800) {
-        nSubsidy = 0.5 * COIN;
-    } else if (nHeight >= 1036800) {
-        nSubsidy = 0.05 * COIN;
+    if (nHeight > Params().LAST_POW_BLOCK() && nHeight < 345600) {
+        nSubsidy = 35 * COIN;
+    } else if (nHeight >= 345600 && nHeight < 691200) {
+        nSubsidy = 23 * COIN;
+    } else if (nHeight >= 691200 && nHeight < 1000000) {
+        nSubsidy = 12 * COIN;
+    } else if (nHeight >= 1000000) {
+        nSubsidy = 5 * COIN;
     } 
-	return nSubsidy * 30 * 24 * 40 / Params().TargetSpacing(); 
+    return ((nSubsidy / 100) * 10) * 480 * 30;	
 }
 
 void CBudgetManager::NewBlock()
